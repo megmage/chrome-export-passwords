@@ -1,3 +1,13 @@
+/**
+* Script ver 0.01beta
+* Writing by Ruslan Kovalev : skidisaster@gmail.com
+* Feb.25 2015
+*
+*
+*/
+
+
+
 // first part of executing script
 out="";
 out2="";
