@@ -15,7 +15,7 @@ url|login|pass\n
 
     out=""; out2="";
     var dat=document.getElementsByClassName("password");
-    for(i=0;i<dat.length;i++){
+    for(i=0;i&lt;dat.length;i++){
     chrome.send('requestShowPassword', [i]);
     };
 
@@ -24,11 +24,11 @@ url|login|pass\n
 3. And now insert this part of js code in console:
 
 
-    for(i=0;i<dat.length;i++){
+    for(i=0;i&lt;dat.length;i++){
     x=dat[i].parentNode;
     out+='\n'+x.childNodes[0].innerText+"|"+x.childNodes[1].innerText+"|"
     +x.childNodes[2].childNodes[0].value;
-    out2+="<br/>"+x.childNodes[0].innerText+"|"+x.childNodes[1].innerText+"|"
+    out2+="&lt;br/&gt;"+x.childNodes[0].innerText+"|"+x.childNodes[1].innerText+"|"
     +x.childNodes[2].childNodes[0].value;};console.log(out);
     document.write(out2);
 
