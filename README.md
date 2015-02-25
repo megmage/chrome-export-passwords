@@ -15,32 +15,32 @@ Output maked in format:
 Last 3 fields "httpRealm","usernameField","passwordField" filled empty because Chrome has no information about in his Chrome Password Manager.
 
 
-1. Open in Chromium browser link to Chrome password manager: chrome://settings-frame/passwords\n\r
+1. Open in Chromium browser link to Chrome password manager: chrome://settings-frame/passwords
 
 2. Open console (F12) and insert this js code:
-
-    out="";\n
-    out2="";\n
-    var pm = PasswordManager.getInstance();\n
-    var model = pm.savedPasswordsList_.dataModel;\n
-    var pl = pm.savedPasswordsList_;\n
-    \n
-    for(i=0;i&lt;model.length;i++){\n
-       PasswordManager.requestShowPassword(i);\n
-    };\n
-
+```
+    out="";
+    out2="";
+    var pm = PasswordManager.getInstance();
+    var model = pm.savedPasswordsList_.dataModel;
+    var pl = pm.savedPasswordsList_;
+    
+    for(i=0;i&lt;model.length;i++){
+       PasswordManager.requestShowPassword(i);
+    };
+```
 3. After step 2 you will see all your passwords in Chromium Password manager Dialog.
 
 4. And now insert this part of js code in console:
-
-    for(i=0;i&lt;model.length;i++){\n
-    var item = pl.getListItemByIndex(i);\n
-    out+="\n"+model.array_[i][0]+"|"+model.array_[i][1]+"|"+item.childNodes[0].childNodes[2].childNodes[0].value;\n
-    out2+='&lt;br/&gt;"http://'+model.array_[i][0]+'","'+model.array_[i][1]+'","'+item.childNodes[0].childNodes[2].childNodes[0].value+'","http://'+model.array_[i][0]+'","","",""';\n
-    };\n
+```
+    for(i=0;i&lt;model.length;i++){
+    var item = pl.getListItemByIndex(i);
+    out+="\n"+model.array_[i][0]+"|"+model.array_[i][1]+"|"+item.childNodes[0].childNodes[2].childNodes[0].value;
+    out2+='&lt;br/&gt;"http://'+model.array_[i][0]+'","'+model.array_[i][1]+'","'+item.childNodes[0].childNodes[2].childNodes[0].value+'","http://'+model.array_[i][0]+'","","",""';
+    };
     console.log(out);
     document.write(out2);
-
+```
 5. Now you see all your passwords in format i described early.
 
 6. Copy all data to csv file and import to FireFox :)
