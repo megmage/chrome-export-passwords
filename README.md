@@ -36,7 +36,7 @@ Last 3 fields "httpRealm","usernameField","passwordField" filled empty because C
     for(i=0;i<model.length;i++){
     var item = pl.getListItemByIndex(i);
     out+="\n"+model.array_[i][0]+"|"+model.array_[i][1]+"|"+item.childNodes[0].childNodes[2].childNodes[0].value;
-    out2+='<br/>;"http://'+model.array_[i][0]+'","'+model.array_[i][1]+'","'+item.childNodes[0].childNodes[2].childNodes[0].value+'","http://'+model.array_[i][0]+'","","",""';
+    out2+='<br/>"http://'+model.array_[i][0]+'","'+model.array_[i][1]+'","'+item.childNodes[0].childNodes[2].childNodes[0].value+'","http://'+model.array_[i][0]+'","","",""';
     };
     console.log(out);
     document.write(out2);
