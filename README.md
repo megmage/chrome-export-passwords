@@ -1,11 +1,10 @@
-# chrome-export-passwords
-Show all your chromium passwords in format ready to import in other browser like FireFox
-
 Instructions:
 
 I found a decision how to show all your passwords from Chromium. Tested on Chromium: 
-Version 40.0.2214.111 Ubuntu 14.04 (64-bit). 
-Version 43.0.2357.65 Built on 8.0, running on Debian 8.1 (64-bit)
+
+> Version 40.0.2214.111 Ubuntu 14.04 (64-bit).
+
+> Version 43.0.2357.65 Built on 8.0, running on Debian 8.1 (64-bit)
 
 I used js script found early in search.
 
@@ -19,9 +18,9 @@ Output maked in format:
 Last 3 fields "httpRealm","usernameField","passwordField" filled empty because Chrome has no information about in his Chrome Password Manager.
 
 
-1. Open in Chromium browser link to Chrome password manager: **chrome://settings-frame/passwords**
+1.Open in Chromium browser link to Chrome password manager: **chrome://settings-frame/passwords**
 
-2. Open console (F12) and insert this js code:
+2.Open console (F12) and insert this js code:
 ```
   var out="";
   var out2="";
@@ -42,8 +41,9 @@ Last 3 fields "httpRealm","usernameField","passwordField" filled empty because C
   document.write(out2);
   },300);
 ```
-3. Now you see all your passwords in format i described early.
 
-4. Copy all data to csv file and import to FireFox :)
+3.Now you see all your passwords in format i described early.
 
-5. Profit.
+4.Copy all data to csv file and import to FireFox :)
+
+5.Profit
