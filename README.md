@@ -2,9 +2,11 @@ Instructions:
 
 I found a decision how to show all your passwords from Chromium. Tested on Chromium: 
 
-> Version 40.0.2214.111 Ubuntu 14.04 (64-bit).
+> Version 40.0.2214.111 Ubuntu 14.04 (64-bit) -  Passed
 
-> Version 43.0.2357.65 Built on 8.0, running on Debian 8.1 (64-bit)
+> Version 43.0.2357.65 Built on 8.0, running on Debian 8.1 (64-bit) - Passed
+
+> Version 48.0.2564.82 Built on 8.3, running on Debian 8.3 (64-bit) - Passed
 
 I used js script found early in search.
 
