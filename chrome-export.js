@@ -31,7 +31,7 @@ setTimeout(
 						+ item.childNodes[0].childNodes[2].childNodes[0].value;
 				out2 += '<br/>"http://' + model.array_[i].shownUrl + '","'
 						+ model.array_[i].username + '","'
-						+ item.childNodes[0].childNodes[2].childNodes[0].value
+						+ item.childNodes[0].childNodes[2].childNodes[0].value.replace(/"/g, '""')
 						+ '","' + model.array_[i].origin + '"," "," "," "';
 			}
 			;
