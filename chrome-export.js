@@ -1,21 +1,20 @@
 /**
-* Script ver 0.5
+* Script ver 0.6
 * Writing by Ruslan Kovalev : skidisaster@gmail.com
-* Feb.25 2015
+* Jun.10 2016
 * output format changed for ready to use in FireFox Export plugin
 * please install this plugin from https://addons.mozilla.org/en-Us/firefox/addon/password-exporter/
 * changes:
+* - modified to get it to work with Chrome / Chromium 50
+* - use document.body.innerText instead of document.write to avoid HTML encoding issues
+* - write tab separated TSV format to the console log
 * - version based on Chrome api objects not on DOM.
 */
 
-
-
-// first part of executing script
 var out = "";
 var out2 = "";
 var pm = PasswordManager.getInstance();
 var model = pm.savedPasswordsList_.dataModel;
-console.error(model);
 var pl = pm.savedPasswordsList_;
 for (i = 0; i < model.length; i++) {
 	PasswordManager.requestShowPassword(i);
@@ -26,14 +25,14 @@ setTimeout(
 			out2 += '"hostname","username","password","formSubmitURL","httpRealm","usernameField","passwordField"';
 			for (i = 0; i < model.length; i++) {
 				var item = pl.getListItemByIndex(i);
-				out += "\n" + model.array_[i][0] + "|" + model.array_[i][1]
-						+ "|"
-						+ item.childNodes[0].childNodes[2].childNodes[0].value;
-				out2 += '<br/>"http://' + model.array_[i].shownUrl + '","'
+				out += "\n" + model.array_[i].origin
+						+ "	" + model.array_[i].username
+						+ "	" + item.childNodes[0].childNodes[2].childNodes[0].value;
+				out2 += '\n"' + model.array_[i].origin + '","'
 						+ model.array_[i].username + '","'
 						+ item.childNodes[0].childNodes[2].childNodes[0].value.replace(/"/g, '""')
 						+ '","' + model.array_[i].origin + '"," "," "," "';
 			}
-			;
-			document.write(out2);
-		}, 7000);
+			console.log(out);
+			document.body.innerText = out2;
+		}, 2500);
