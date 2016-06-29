@@ -10,7 +10,7 @@ I found a decision how to show all your passwords from Chromium. Tested on Chrom
 
 > Version 50.0.2661.102 Ubuntu 16.04 (64-bit) - Passed
 
-> Added fixxes for chrome version 51+
+> Version 51.0.2704.79 Built on 8.4, running on Debian 8.5 (64-bit) - Passed
 
 I used js script found early in search.
 
@@ -24,7 +24,7 @@ Output maked in format:
 Last 3 fields "httpRealm","usernameField","passwordField" filled empty because Chrome has no information about in his Chrome Password Manager.
 
 
-1.Open in Chromium browser link to Chrome password manager: **chrome://settings-frame/passwords**
+1.Open in Chromium browser link to Chrome password manager: chrome://settings-frame/passwords
 
 2.Open console (F12) and insert this js code:
 
