@@ -1,5 +1,5 @@
 /**
-* Script ver 0.8 - for chrome version 51 and after
+* Script ver 0.8 - for chrome version before 51
 *
 * Writing by Ruslan Kovalev : skidisaster@gmail.com
 * Jun.10 2016
@@ -26,13 +26,13 @@ setTimeout(
 			out2 += '"hostname","username","password","formSubmitURL","httpRealm","usernameField","passwordField"';
 			for (i = 0; i < model.length; i++) {
 				var item = pl.getListItemByIndex(i);
-				out += "\n" + model.array_[i].url
+				out += "\n" + model.array_[i].origin
 						+ "	" + model.array_[i].username
 						+ "	" + item.childNodes[0].childNodes[2].childNodes[0].value;
-				out2 += '\n"' + model.array_[i].url + '","'
+				out2 += '\n"' + model.array_[i].origin + '","'
 						+ model.array_[i].username + '","'
 						+ item.childNodes[0].childNodes[2].childNodes[0].value.replace(/"/g, '""')
-						+ '","' + model.array_[i].url + '"," "," "," "';
+						+ '","' + model.array_[i].origin + '"," "," "," "';
 			}
 			console.log(out);
 			document.body.innerText = out2;
