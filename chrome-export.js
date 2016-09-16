@@ -17,8 +17,10 @@ var out2 = "";
 var pm = PasswordManager.getInstance();
 var model = pm.savedPasswordsList_.dataModel;
 var pl = pm.savedPasswordsList_;
+//var version = loadTimeData.data_.browserVersion;
+var timelag = (model.length > 100) ? 15000 : 5000;
 for (i = 0; i < model.length; i++) {
-	PasswordManager.requestShowPassword(i);
+	chrome.send('requestShowPassword', [i]);
 };
 setTimeout(
 		function() {
@@ -36,4 +38,4 @@ setTimeout(
 			}
 			console.log(out);
 			document.body.innerText = out2;
-		}, 2500);
+		}, timelag);
