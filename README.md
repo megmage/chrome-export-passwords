@@ -35,6 +35,7 @@ var out2 = "";
 var pm = PasswordManager.getInstance();
 var model = pm.savedPasswordsList_.dataModel;
 var pl = pm.savedPasswordsList_;
+var timelag = (model.length > 100) ? 15000 : 5000;
 for (i = 0; i < model.length; i++) {
 	PasswordManager.requestShowPassword(i);
 };
@@ -54,7 +55,7 @@ setTimeout(
 			}
 			console.log(out);
 			document.body.innerText = out2;
-		}, 2500);
+		}, timelag);
 ```
 > For version 51 and after:
 ```javascript
@@ -63,6 +64,7 @@ var out2 = "";
 var pm = PasswordManager.getInstance();
 var model = pm.savedPasswordsList_.dataModel;
 var pl = pm.savedPasswordsList_;
+var timelag = (model.length > 100) ? 15000 : 5000;
 for (i = 0; i < model.length; i++) {
 	PasswordManager.requestShowPassword(i);
 };
@@ -82,7 +84,7 @@ setTimeout(
 			}
 			console.log(out);
 			document.body.innerText = out2;
-		}, 2500);
+		}, timelag);
 ```
 
 3.Now you see all your passwords in format i described early.
