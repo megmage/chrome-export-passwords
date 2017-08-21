@@ -19,6 +19,7 @@ var model = pm.savedPasswordsList_.dataModel;
 var pl = pm.savedPasswordsList_;
 var version = loadTimeData.data_.browserVersion;
 var timelag = (model.length > 100) ? 15000 : 5000;
+document.getElementById("saved-passwords-list").scrollTop = document.getElementById("saved-passwords-list").scrollHeight;
 for (i = 0; i < model.length; i++) {
 	chrome.send('requestShowPassword', [i]);
 };
